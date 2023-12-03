@@ -1,6 +1,5 @@
 from django.shortcuts import render
 
-# myapp/views.py
 from rest_framework import generics
 from .models import Memo, Receipt
 from .serializers import MemoSerializer, ReceiptSerializer
@@ -18,4 +17,3 @@ class ReceiptListCreateView(generics.ListCreateAPIView):
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
-
